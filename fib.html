@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fib</title>
+  <script type="text/javascript">
+    function fib (){
+      var first = 0, next = 1, sum = 0, evens = [];
+
+      while(next < 4000000) {
+        sum = first + next;
+        first = next;
+        next = sum;
+          if(sum%2===0){
+            evens.push(sum);
+          }
+      }
+
+      var total = evens.reduce(function(numSum, num){
+        return numSum + num;
+      });
+
+      return total;
+    }
+    document.write(fib());
+    </script>
+</head>
+<body>
+</body>
+</html>
